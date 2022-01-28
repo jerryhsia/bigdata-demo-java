@@ -16,7 +16,6 @@ import org.apache.hadoop.io.IOUtils;
  *
  * @author zhi
  * @since 2019年9月10日18:28:24
- *
  */
 public class HDFS {
     private static FileSystem fileSystem = null;

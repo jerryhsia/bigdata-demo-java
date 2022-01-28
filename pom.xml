@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.xiajie.bigdata-demo</groupId>
-    <artifactId>hiveJDBCWithKerberos</artifactId>
+    <groupId>me.xiajie.bigdata-demo-java</groupId>
+    <artifactId>BigdataDemoJava</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>hiveserver2-jdbc</name>
+    <name>BigdataDemoJava</name>
 
     <dependencies>
         <dependency>
@@ -66,8 +66,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
