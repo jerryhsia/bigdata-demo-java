@@ -22,6 +22,7 @@ public class HiveWithKerberos2 {
         UserGroupInformation.setConfiguration(conf);
         try {
             UserGroupInformation.loginUserFromKeytab("hive/user2@HADOOP.COM", System.getProperty("hive_keytab"));
+            System.out.printf("user: %s", UserGroupInformation.getCurrentUser());
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
