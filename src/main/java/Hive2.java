@@ -3,12 +3,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Hive {
+public class Hive2 {
     public static void main(String[] args) throws Exception {
 
-        String connectionUrl = "jdbc:hive2://10.36.249.147:8719/default";
+        String connectionUrl = "jdbc:hive2://10.36.248.27:8484/default";
         String jdbcDriverName = "org.apache.hive.jdbc.HiveDriver";
-        String sqlStatement = "select count(*) from titanic";
+        String sqlStatement = "show databases";
 
         Class.forName(jdbcDriverName);
         try {
