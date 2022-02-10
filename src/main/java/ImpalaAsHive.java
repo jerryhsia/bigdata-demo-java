@@ -8,7 +8,7 @@ public class ImpalaAsHive {
         // 这个地址填写自己的impala server地址,默认端口为21050，请按需修改
         String connectionUrl = "jdbc:hive2://10.36.249.147:8703/default;auth=noSasl";
         String jdbcDriverName = "org.apache.hive.jdbc.HiveDriver";
-        String sqlStatement = "show databases";
+        String sqlStatement = "show tables";
 
         //加载驱动
         Class.forName(jdbcDriverName);

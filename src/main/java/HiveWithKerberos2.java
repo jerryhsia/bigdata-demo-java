@@ -1,3 +1,5 @@
+import org.apache.hadoop.security.UserGroupInformation;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,7 +9,7 @@ public class HiveWithKerberos2 {
 
     private static String driverName = "org.apache.hive.jdbc.HiveDriver";
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws Exception {
         try {
             Class.forName(driverName);
         } catch (ClassNotFoundException e) {
@@ -24,7 +26,7 @@ public class HiveWithKerberos2 {
 
         Connection con = DriverManager.getConnection(JDBC_DB_URL);
         Statement stmt = con.createStatement();
-        String sql = "show databases";
+        String sql = "show tables";
         System.out.println("Running: " + sql);
         ResultSet res = stmt.executeQuery(sql);
         while (res.next()) {

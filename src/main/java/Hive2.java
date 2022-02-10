@@ -8,7 +8,7 @@ public class Hive2 {
 
         String connectionUrl = "jdbc:hive2://10.36.248.27:8484/default";
         String jdbcDriverName = "org.apache.hive.jdbc.HiveDriver";
-        String sqlStatement = "show databases";
+        String sqlStatement = "show tables";
 
         Class.forName(jdbcDriverName);
         try {

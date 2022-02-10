@@ -16,9 +16,11 @@ public class HiveWithKerberos {
         }
 
         Configuration conf = new Configuration();
+        System.setProperty("hive_keytab", "/Users/xiajie01/Develop/acg/bigdata-demo-java/hive_user2.keytab");
+        System.setProperty("java.security.krb5.conf", "/Users/xiajie01/Develop/acg/bigdata-demo-java/krb5.conf");
         conf.set("hadoop.security.authentication", "Kerberos");
-        System.setProperty("hive_keytab", "hive_user2.keytab");
-        System.setProperty("java.security.krb5.conf", "krb5.conf");
+        //conf.set("hadoop.security.auth_to_local", "RULE:[2:$1](hive)s/^.*$/hive/");
+        //conf.set("hadoop.security.auth_to_local", "");
         UserGroupInformation.setConfiguration(conf);
         try {
             UserGroupInformation.loginUserFromKeytab("hive/user2@HADOOP.COM", System.getProperty("hive_keytab"));
@@ -31,8 +33,9 @@ public class HiveWithKerberos {
         String JDBC_DB_URL = "jdbc:hive2://10.36.248.27:8719/default;principal=hive/quickstart.cloudera@HADOOP.COM";
 
         Connection con = DriverManager.getConnection(JDBC_DB_URL);
+        System.out.println(con.getMetaData().getDriverVersion());
         Statement stmt = con.createStatement();
-        String sql = "select count(*) from titanic";
+        String sql = "show tables";
         System.out.println("Running: " + sql);
         ResultSet res = stmt.executeQuery(sql);
         while (res.next()) {
