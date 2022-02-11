@@ -21,6 +21,8 @@ public class HiveWithKerberos2 {
         System.setProperty("sun.security.jgss.debug","true");
         System.setProperty("javax.security.auth.useSubjectCredsOnly","false");
         System.setProperty("java.security.krb5.conf","krb5.conf");
+        sun.security.krb5.Config.refresh();
+        System.out.println(sun.security.krb5.Config.getInstance().toString());
 
         String JDBC_DB_URL = "jdbc:hive2://10.36.248.27:8719/default;principal=hive/quickstart.cloudera@HADOOP.COM";
 
