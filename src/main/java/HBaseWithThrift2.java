@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.List;
 
-public class HBaseWithThrift {
+public class HBaseWithThrift2 {
     public static void main(String[] args) {
         try {
             //创建连接
@@ -18,9 +18,9 @@ public class HBaseWithThrift {
             transport.open();
 
             //指定表名
-            ByteBuffer table = ByteBuffer.wrap("tbl_user".getBytes());
+            ByteBuffer table = ByteBuffer.wrap("user".getBytes());
             //指定行键
-            ByteBuffer row = ByteBuffer.wrap("xiaoming".getBytes());
+            ByteBuffer row = ByteBuffer.wrap("xiajie01".getBytes());
             //指定列簇
             ByteBuffer family = ByteBuffer.wrap("detail".getBytes());
             //指定列名
