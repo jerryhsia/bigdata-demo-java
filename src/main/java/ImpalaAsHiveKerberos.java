@@ -12,8 +12,6 @@ public class ImpalaAsHiveKerberos {
         System.setProperty("hive_keytab", "/Users/xiajie01/Develop/acg/bigdata-demo-java/hive_user2.keytab");
         System.setProperty("java.security.krb5.conf", "/Users/xiajie01/Develop/acg/bigdata-demo-java/krb5.conf");
         conf.set("hadoop.security.authentication", "Kerberos");
-        //conf.set("hadoop.security.auth_to_local", "RULE:[2:$1](user2)s/^.*$/root/");
-        //conf.set("hadoop.security.auth_to_local", "");
         UserGroupInformation.setConfiguration(conf);
         try {
             UserGroupInformation.loginUserFromKeytab("hive/user2@HADOOP.COM", System.getProperty("hive_keytab"));
