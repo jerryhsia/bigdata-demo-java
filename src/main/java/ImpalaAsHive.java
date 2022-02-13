@@ -10,22 +10,13 @@ public class ImpalaAsHive {
         String jdbcDriverName = "org.apache.hive.jdbc.HiveDriver";
         String sqlStatement = "show tables";
 
-        //加载驱动
         Class.forName(jdbcDriverName);
-        try  {
-            Connection con = DriverManager.getConnection(connectionUrl);
-            //查询
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery(sqlStatement);
-            System.out.println("---begin query---");
+        Connection con = DriverManager.getConnection(connectionUrl);
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery(sqlStatement);
 
-            //打印输出
-            while (rs.next()) {
-                System.out.println(rs.getString(1));
-            }
-            System.out.println("---end query---");
-        } catch (Exception e) {
-            e.printStackTrace();
+        while (rs.next()) {
+            System.out.println(rs.getString(1));
         }
     }
 }

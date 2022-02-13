@@ -23,7 +23,6 @@ public class HDFSWithKerberos {
             UserGroupInformation.loginUserFromKeytab("hdfs/user@HADOOP.COM", "hdfs_user.keytab");//kerberos 认证
             UserGroupInformation.getLoginUser();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

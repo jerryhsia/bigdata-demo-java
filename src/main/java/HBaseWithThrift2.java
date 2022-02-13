@@ -59,7 +59,6 @@ public class HBaseWithThrift2 {
             //删除
             TDelete delete = new TDelete();
             delete.setRow("row1".getBytes());
-//        delete.setColumns(Arrays.asList(new TColumn().setFamily(family).setQualifier("name".getBytes()))); //只删除单个属性
             client.deleteSingle(table, delete);
 
             transport.close();
@@ -67,6 +66,5 @@ public class HBaseWithThrift2 {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }
